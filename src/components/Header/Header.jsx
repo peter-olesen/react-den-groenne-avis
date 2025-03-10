@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { Button } from "../Button/Button";
 import s from "./Header.module.scss";
@@ -10,10 +11,12 @@ export const Header = () => {
   return (
     <header className={s.Header}>
       <div className={s.HeaderContainer}>
-        <div className={s.Logo}>
-          <span>Den Grønne</span>
-          <span>Avis</span>
-        </div>
+        <NavLink to="/">
+          <div className={s.Logo}>
+            <span>Den Grønne</span>
+            <span>Avis</span>
+          </div>
+        </NavLink>
         <div className={s.HeaderRight}>
           <div className={s.DropdownAndButton}>
             <Dropdown

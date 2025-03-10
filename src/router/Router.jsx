@@ -7,7 +7,7 @@ import { Layout } from "../layouts/Layout";
 // Pages
 import { Home } from "../pages/Home";
 import { SingleOffer } from "../pages/SingleOffer";
-import { OfferCategory } from "../pages/OfferCategory";
+import { Categories } from "../pages/Categories";
 import { CreateOffer } from "../pages/CreateOffer";
 import { Login } from "../pages/Login";
 import { Dashboard } from "../pages/Dashboard";
@@ -37,8 +37,8 @@ export const Router = () => {
         <Route index element={<Home />} />
 
         {/* Offer/category routes */}
-        <Route path={"/offer/:id"} element={<SingleOffer />} />
-        <Route path={"/category/:id"} element={<OfferCategory />} />
+        <Route path={"/annonce/:id"} element={<SingleOffer />} />
+        <Route path={"/kategori/:slug"} element={<Categories />} />
         <Route path={"/create-offer"} element={<CreateOffer />} />
 
         {/* User routes */}

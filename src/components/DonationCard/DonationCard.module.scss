@@ -1,2 +1,17 @@
 @use "../../styles/placeholders" as *;
 @use "../../styles/variables" as *;
+
+.DonationCard {
+  color: $wht;
+  padding: 0.5rem 1rem;
+  background-color: #00000040;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .Total {
+    width: 80%;
+    color: $mint;
+    text-align: right;
+  }
+}

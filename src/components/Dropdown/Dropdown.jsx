@@ -11,7 +11,7 @@ export const Dropdown = ({ className, name, id, isClickable }) => {
   let navigate = useNavigate();
 
   const onChange = (e) => {
-    navigate(`/category/${e}`);
+    navigate(`/kategori/${e}`);
   };
 
   const categoryChange = (e) => {
