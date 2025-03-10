@@ -1,0 +1,25 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Newsletter {
+  .NewsletterInputs {
+    display: flex;
+    flex-direction: row;
+
+    input[type="email"] {
+      color: $blk;
+      background: $wht;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 1rem;
+    }
+
+    input[type="submit"] {
+      color: $wht;
+      background: $green;
+      border: none;
+      padding: 1rem 1.5rem;
+    }
+  }
+}

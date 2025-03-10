@@ -1,0 +1,30 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Footer {
+  width: 100%;
+  background: $mint;
+  display: flex;
+  justify-content: center;
+
+  .FooterContainer {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.4fr 0.9fr;
+    gap: 5rem;
+    padding: 2rem;
+
+    h3 {
+      color: $wht;
+      margin: 1rem 0;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    a {
+      color: $wht;
+    }
+  }
+}

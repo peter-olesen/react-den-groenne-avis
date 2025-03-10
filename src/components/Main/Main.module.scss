@@ -1,0 +1,7 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Main {
+  width: 1200px;
+  background: $gray;
+}

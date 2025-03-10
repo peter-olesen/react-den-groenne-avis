@@ -1,0 +1,74 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Header {
+  background: $wht;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .HeaderContainer {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    .Logo {
+      font-size: 32px;
+
+      span:first-of-type {
+        color: $wht;
+        border: solid 2px $green;
+        background: $green;
+        padding: 0.5rem;
+      }
+
+      span:last-of-type {
+        color: $green;
+        border: solid 2px $green;
+        background: $wht;
+        padding: 0.5rem;
+      }
+    }
+
+    .HeaderRight {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      .DropdownAndButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .HeaderDropdown {
+          border: solid 2px $mint;
+          background: $gray;
+          padding: 0.5rem;
+        }
+
+        .HeaderButton {
+          color: $wht;
+          background: $mint;
+          border: none;
+          padding: 0.7rem 1rem;
+        }
+      }
+
+      .HeaderIcons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}

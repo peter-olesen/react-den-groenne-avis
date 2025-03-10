@@ -1,0 +1,22 @@
+@use "./styles/placeholders" as *;
+@use "./styles/variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background: $gray;
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+  }
+}
