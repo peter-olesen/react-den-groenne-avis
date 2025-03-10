@@ -1,5 +1,5 @@
 import s from "./Newsletter.module.scss";
-
+// Need to change to use react-hook-form and have regex validation for email
 export const Newsletter = () => {
   return (
     <div className={s.Newsletter}>
