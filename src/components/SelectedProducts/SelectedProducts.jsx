@@ -18,7 +18,7 @@ export const SelectedProducts = () => {
           .slice(0, 6)
           .map((item) => {
             return (
-              <NavLink key={item.id} to={`/annonce/${item.id}`}>
+              <NavLink key={item.id} to={`/annonce/${item.slug}`}>
                 <div
                   className={s.ProductCard}
                   style={{ backgroundImage: `url(${item.image})` }}

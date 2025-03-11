@@ -22,6 +22,9 @@ export const Router = () => {
     const pageTitles = {
       "/": "Den Grønne Avis",
       "/create-offer": "Opret annonce - Den Grønne Avis",
+      "/login": "Login - Den Grønne Avis",
+      "/create-account": "Opret en bruger - Den Grønne Avis",
+      "/dashboard": "Kontrolpanel - Den Grønne Avis",
     };
 
     const currentTitle = pageTitles[location.pathname];

@@ -1,15 +1,13 @@
 import { Section } from "../Section/Section";
-import { Separator } from "../Separator/Separator";
 import { DonationCard } from "../DonationCard/DonationCard";
 import s from "./Donations.module.scss";
 
-import donation1 from "../../assets/images/banner_image2.jpg";
-import donation2 from "../../assets/images/banner_image3.jpg";
+import donation1 from "../../assets/images/compressed/banner_image2.jpg";
+import donation2 from "../../assets/images/compressed/banner_image3.jpg";
 
 export const Donations = () => {
   return (
     <>
-      <Separator />
       <Section className={s.Donations}>
         <DonationCard
           bgSrc={donation1}

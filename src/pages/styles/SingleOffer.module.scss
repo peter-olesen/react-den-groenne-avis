@@ -32,6 +32,21 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 6rem;
+
+        .CommentCard {
+          font-size: 14px;
+          color: $blk;
+
+          .CommentInfo {
+            margin: 0.5rem 0;
+          }
+
+          .CommentBox {
+            border: 2px solid #1d843980;
+            background: #f7f9f9;
+            padding: 0.2rem 0.5rem;
+          }
+        }
       }
     }
   }

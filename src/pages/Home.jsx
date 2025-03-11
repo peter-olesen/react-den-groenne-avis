@@ -7,11 +7,9 @@ import { Donations } from "../components/Donations/Donations";
 export const Home = () => {
   return (
     <>
-      <Separator />
       <SelectedProducts />
       <Separator />
       <Hero />
-      <Separator />
       <PopularCategories />
       <Donations />
     </>

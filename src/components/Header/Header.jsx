@@ -32,7 +32,9 @@ export const Header = () => {
           <div className={s.HeaderIcons}>
             <img src={notification} alt="" />
             <img src={info} alt="" />
-            <img src={account} alt="" />
+            <NavLink to="/login">
+              <img src={account} alt="" />
+            </NavLink>
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
-import { NavLink, useParams } from "react-router";
+import { useEffect } from "react";
+import { useParams } from "react-router";
 import { useGet } from "../hooks/useGet";
 import { CategoriesSidebar } from "../components/CategoriesSidebar/CategoriesSidebar";
 import { Separator } from "../components/Separator/Separator";
+import { formatDateTime } from "../helpers/formatDateTime";
 import s from "./styles/SingleOffer.module.scss";
-import { useEffect } from "react";
-import { CommentCard } from "../components/CommentCard/CommentCard";
 
 export const SingleOffer = () => {
   const { slug } = useParams();
@@ -34,22 +34,32 @@ export const SingleOffer = () => {
             <Separator />
             <h3>Kontakt sælger</h3>
             <p>Du skal være logget ind for at kunne kontakte sælgeren.</p>
-            {offer?.data?.comments.map((item, index) => (
-              <div className={s.CommentSection}>
-                <CommentCard
-                  key={index}
-                  name={item.user.firstname}
-                  date={item.createdAt}
-                  comment={`${item.comment}`}
-                />
-                <CommentCard
-                  key={index}
-                  name={item.user.firstname}
-                  date={item.createdAt}
-                  comment={`${item.comment}`}
-                />
-              </div>
-            ))}
+            <div className={s.CommentSection}>
+              {offer?.data?.comments.map((item) => {
+                const isOwner = item.user.id === offer.data.owner.user_id;
+                return (
+                  <>
+                    <div key={item.id} className={s.CommentCard}>
+                      <p className={s.CommentInfo}>
+                        {item.user.firstname} {isOwner ? "(sælger):" : ""}
+                        {formatDateTime(item.createdAt)}
+                      </p>
+                      <div className={s.CommentBox}>
+                        <p>{item.comment}</p>
+                      </div>
+                    </div>
+                    <div key="id" className={s.CommentCard}>
+                      <p className={s.CommentInfo}>
+                        {item.user.firstname} d. {item.createdAt}
+                      </p>
+                      <div className={s.CommentBox}>
+                        <p>{item.comment}</p>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

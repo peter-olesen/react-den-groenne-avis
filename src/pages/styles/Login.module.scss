@@ -1,0 +1,51 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 32px;
+  }
+
+  a {
+    color: $green;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-left: 0.1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      background: #edecec;
+      color: #000000a6;
+      border: 2px solid #1d843980;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .LoginButton {
+      display: flex;
+      justify-content: end;
+      margin: 1rem 0 3rem 0;
+
+      input[type="submit"] {
+        color: $wht;
+        background: $green;
+        padding: 0.5rem 1rem;
+        border: none;
+      }
+    }
+  }
+}
