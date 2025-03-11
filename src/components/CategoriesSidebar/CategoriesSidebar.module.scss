@@ -1,0 +1,21 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.CategoriesSidebar {
+  p:first-of-type {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  .CategoriesList {
+    // font-size: 14px;
+    font-weight: 300;
+    margin: 0.5rem 0 0 1rem;
+
+    a {
+      color: $blk;
+      text-decoration: none;
+    }
+  }
+}

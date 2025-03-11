@@ -25,7 +25,9 @@ export const Header = () => {
               name="headerDropdown"
               id="headerDropdown"
             />
-            <Button className={s.HeaderButton}>opret annonce</Button>
+            <NavLink to="/create-offer">
+              <Button className={s.HeaderButton}>opret annonce</Button>
+            </NavLink>
           </div>
           <div className={s.HeaderIcons}>
             <img src={notification} alt="" />

@@ -1,7 +1,4 @@
-import { useNavigate } from "react-router";
-
+import s from "./Button.module.scss";
 export const Button = ({ className, children }) => {
-  let navigate = useNavigate();
-
-  return <button className={className}>{children}</button>;
+  return <button className={`${s.Button} ${className}`}>{children}</button>;
 };

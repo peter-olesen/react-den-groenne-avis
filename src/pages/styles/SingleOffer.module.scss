@@ -1,0 +1,53 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.SingleOffer {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+
+  .Offer {
+    margin: 0.5rem 0;
+
+    h2 {
+      font-size: 36px;
+    }
+
+    img {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .Comments {
+      margin-top: 4rem;
+
+      h3 {
+        margin-top: 2rem;
+        font-size: 32px;
+        color: $green;
+        text-align: center;
+      }
+
+      .CommentSection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6rem;
+      }
+    }
+  }
+}
+
+.Pageination {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin: 1rem 0;
+
+  span {
+    margin: 0 1rem;
+  }
+
+  span:last-of-type {
+    margin: 0 0 0 1rem;
+  }
+}

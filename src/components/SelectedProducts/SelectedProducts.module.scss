@@ -1,12 +1,38 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
 .SelectedProducts {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
+  margin-bottom: 2rem;
+
+  a {
+    color: $wht;
+  }
 
   .ProductCard {
-    img {
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+
+    p {
       width: 100%;
-      height: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: $wht;
+      background: #00a676bf;
+      margin: 0;
+      padding: 0.5rem;
+      display: none;
+    }
+
+    &:hover {
+      p {
+        display: block;
+      }
     }
   }
 }

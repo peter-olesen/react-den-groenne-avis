@@ -11,20 +11,24 @@ export const PopularCategories = () => {
   } = useGet("http://localhost:4242/categories");
 
   return (
-    <Section className={s.PopularCategories}>
-      {categories?.data
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 6)
-        .map((item) => {
-          return (
-            <NavLink key={item.id} to={`/kategori/${item.slug}`}>
-              <div className={s.CategoryCard}>
-                <p>{item.name}</p>
-                <img src={item.category_image} alt={item.name} />
-              </div>
-            </NavLink>
-          );
-        })}
+    <Section title="Populære Kategorier">
+      <div className={s.PopularCategories}>
+        {categories?.data
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 6)
+          .map((item) => {
+            return (
+              <NavLink key={item.id} to={`/kategori/${item.slug}`}>
+                <div
+                  className={s.CategoryCard}
+                  style={{ backgroundImage: `url(${item.category_image})` }}
+                >
+                  <p>{item.name}</p>
+                </div>
+              </NavLink>
+            );
+          })}
+      </div>
     </Section>
   );
 };

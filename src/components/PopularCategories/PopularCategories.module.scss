@@ -1,12 +1,26 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
 .PopularCategories {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
+  margin-bottom: 2rem;
+
+  a {
+    color: $wht;
+  }
 
   .CategoryCard {
-    img {
-      width: 100%;
-      height: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    p {
+      background: $mint;
+      text-align: center;
+      font-size: 14px;
+      padding: 0.2rem;
+      margin: 0;
     }
   }
 }

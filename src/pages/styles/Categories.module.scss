@@ -1,0 +1,51 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Categories {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+
+  .Products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    a {
+      color: $blk;
+      text-decoration: none;
+    }
+
+    .ProductCard {
+      p:first-of-type {
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0.5rem 0;
+      }
+
+      img {
+        width: 100%;
+        height: 208px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.Pageination {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin: 1rem 0;
+
+  span {
+    margin: 0 1rem;
+  }
+
+  span:last-of-type {
+    margin: 0 0 0 1rem;
+  }
+}

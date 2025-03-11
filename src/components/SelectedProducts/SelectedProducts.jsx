@@ -11,19 +11,24 @@ export const SelectedProducts = () => {
   } = useGet("http://localhost:4242/products");
 
   return (
-    <Section className={s.SelectedProducts}>
-      {products?.data
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 6)
-        .map((item) => {
-          return (
-            <NavLink key={item.id} to={`/annonce/${item.id}`}>
-              <div className={s.ProductCard}>
-                <img src={item.image} alt={item.name} />
-              </div>
-            </NavLink>
-          );
-        })}
+    <Section title="Udvalgte Produkter">
+      <div className={s.SelectedProducts}>
+        {products?.data
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 6)
+          .map((item) => {
+            return (
+              <NavLink key={item.id} to={`/annonce/${item.id}`}>
+                <div
+                  className={s.ProductCard}
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
+                  <p>{item.name}</p>
+                </div>
+              </NavLink>
+            );
+          })}
+      </div>
     </Section>
   );
 };

@@ -21,6 +21,7 @@ export const Router = () => {
   useEffect(() => {
     const pageTitles = {
       "/": "Den Grønne Avis",
+      "/create-offer": "Opret annonce - Den Grønne Avis",
     };
 
     const currentTitle = pageTitles[location.pathname];
@@ -37,7 +38,7 @@ export const Router = () => {
         <Route index element={<Home />} />
 
         {/* Offer/category routes */}
-        <Route path={"/annonce/:id"} element={<SingleOffer />} />
+        <Route path={"/annonce/:slug"} element={<SingleOffer />} />
         <Route path={"/kategori/:slug"} element={<Categories />} />
         <Route path={"/create-offer"} element={<CreateOffer />} />
 

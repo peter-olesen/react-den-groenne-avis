@@ -9,9 +9,27 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  h3 {
+    font-size: 24px;
+    text-shadow: 0px 4px 4px 0px #00000040;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0.5rem 0;
+  }
+
+  p:last-of-type {
+    font-size: 11px;
+  }
+
   .Total {
     width: 80%;
+    font-size: 32px;
     color: $mint;
+    text-shadow: 0px 4px 4px 0px #00000040;
     text-align: right;
   }
 }
