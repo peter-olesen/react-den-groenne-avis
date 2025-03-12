@@ -6,7 +6,7 @@ export const UserContextProvider = ({ children }) => {
   const [userData, setUserData] = useState();
 
   useEffect(() => {
-    if (userData?.access_token) {
+    if (userData?.data.access_token) {
       sessionStorage.setItem("userData", JSON.stringify(userData));
     }
     if (!userData) {

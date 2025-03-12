@@ -5,9 +5,6 @@ import { UserContext } from "../context/UserContext";
 import { Section } from "../components/Section/Section";
 import s from "./styles/Login.module.scss";
 
-import emailIcon from "../assets/icons/icons8-at-sign-30.png";
-import passwordIcon from "../assets/icons/icons8-secure-30.png";
-
 export const Login = () => {
   const [loginMessage, setLoginMessage] = useState("");
   const [error, setError] = useState(null);
@@ -35,7 +32,7 @@ export const Login = () => {
     fetch("http://localhost:4242/login", options)
       .then((res) => res.json())
       .then((data) => {
-        if (data.access_token) {
+        if (data.data.access_token) {
           setUserData(data);
           setLoginMessage("Du er nu logget ind");
           navigate("/dashboard");
@@ -52,31 +49,34 @@ export const Login = () => {
   return (
     <>
       <Section title="Velkommen tilbage" className={s.Login}>
+        {error && <p>{error}</p>}
+        {loginMessage && <p>{loginMessage}</p>}
+        {errors.username && <p>{errors.username.message}</p>}
         {errors.password && <p>{errors.password.message}</p>}
 
         <div>
           <form className={s.FormContainer} onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="username">Email</label>
             <input
               type="email"
-              name="email"
+              name="username"
+              id="username"
               autoComplete="email"
               placeholder="Din email....."
               {...register("username", {
-                required: "E-mailen er nødvendig.",
+                required: "Emailen er nødvendig.",
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                   message: "Ugyldigt e-mailformat",
                 },
               })}
             />
-            {errors.username && <p>{errors.username.message}</p>}
 
             <label htmlFor="password">Password</label>
-
             <input
               type="password"
               name="password"
+              id="password"
               autoComplete="current-password"
               placeholder="Dit password......"
               {...register("password", {
@@ -98,9 +98,6 @@ export const Login = () => {
             </div>
           </form>
         </div>
-
-        {loginMessage && <p>{loginMessage}</p>}
-        {error && <p className="error">{error}</p>}
       </Section>
     </>
   );
