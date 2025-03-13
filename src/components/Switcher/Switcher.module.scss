@@ -1,0 +1,25 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Switcher {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  border: 2px solid $green;
+  margin: 5rem 0;
+  cursor: pointer;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  .IsSelected {
+    color: $wht;
+    background: $green;
+  }
+
+  .IsNotSelected {
+    color: $green;
+    background: $wht;
+  }
+}

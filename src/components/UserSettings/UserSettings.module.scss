@@ -1,0 +1,54 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Settings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  .UserInfo {
+    display: grid;
+
+    input {
+      background: #edecec;
+      color: #000000a6;
+      border: 2px solid #1d843980;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .Buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .SaveProfile {
+      color: $wht;
+      background: $green;
+      padding: 0.5rem 1rem;
+      border: none;
+    }
+
+    .DeleteProfile {
+      color: $wht;
+      background: #952e0d;
+      padding: 0.5rem 1rem;
+      border: none;
+    }
+  }
+
+  .Checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    align-items: start;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-left: 2rem;
+    }
+  }
+}
