@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
-import s from "./UserSettings.module.scss";
 import { UserContext } from "../../context/UserContext";
+import { DeleteUser } from "../DeleteUser/DeleteUser";
+import s from "./UserSettings.module.scss";
 
 export const UserSettings = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(null);
 
-  const { userData } = useContext(UserContext);
+  const { userData, setUserData } = useContext(UserContext);
 
   let navigate = useNavigate();
 
@@ -50,31 +51,12 @@ export const UserSettings = () => {
       });
   };
 
-  const delete_profile = () => {
-    let confirmation = confirm("Er du sikker på at du vil slette din profil?");
-    if (confirmation) {
-      const options = {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${userData?.data.access_token}`,
-        },
-      };
-
-      fetch("http://localhost:4242/users", options)
-        .then((res) => res.json())
-        .then((data) => {
-          setMessage("Din bruger er nu slettet.");
-        })
-        .catch((error) => {
-          console.error("Der opstod en fejl", error);
-          setError("Der opstod en fejl. Prøv igen");
-        });
-
-      navigate("/");
-    } else {
-      return false;
-    }
+  const logout = () => {
+    sessionStorage.removeItem("userData");
+    setUserData(null);
+    navigate("/", { replace: true });
   };
+
   return (
     <div>
       {message && <p>{message}</p>}
@@ -179,12 +161,9 @@ export const UserSettings = () => {
               type="submit"
               value="gem ændringer"
             />
-            <input
-              className={s.DeleteProfile}
-              type="submit"
-              value="slet profil"
-              onClick={() => delete_profile()}
-            />
+            <DeleteUser />
+
+            <input type="button" value="log ud" onClick={() => logout()} />
           </div>
         </div>
       </form>

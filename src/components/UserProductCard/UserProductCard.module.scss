@@ -1,0 +1,16 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.UserProductCard {
+  border: 2px solid $green;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr;
+
+  .ProductDetails {
+    margin-left: 2rem;
+  }
+
+  .ProductImage {
+    width: 100%;
+  }
+}

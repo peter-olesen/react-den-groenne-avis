@@ -1,0 +1,9 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.DeleteProfile {
+  color: $wht;
+  background: #952e0d;
+  padding: 0.5rem 1rem;
+  border: none;
+}
