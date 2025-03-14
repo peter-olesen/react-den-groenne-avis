@@ -35,8 +35,6 @@ export const SingleOffer = () => {
     let urlencoded = new URLSearchParams();
     urlencoded.append("comment", data.comment);
 
-    console.log(data);
-
     const options = {
       method: "POST",
       body: urlencoded,

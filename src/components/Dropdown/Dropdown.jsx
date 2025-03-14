@@ -14,15 +14,9 @@ export const Dropdown = ({ className, name, id, isClickable }) => {
     navigate(`/kategori/${e}`);
   };
 
-  const categoryChange = (e) => {
-    console.log(e);
-  };
-
   return (
     <select
-      onChange={(e) =>
-        isClickable ? onChange(e.target.value) : categoryChange(e.target.value)
-      }
+      onChange={(e) => onChange(e.target.value)}
       className={className}
       name={name}
       id={id}

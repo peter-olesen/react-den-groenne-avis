@@ -6,7 +6,6 @@ import { Section } from "../components/Section/Section";
 import s from "./styles/Login.module.scss";
 
 export const Login = () => {
-  const [loginMessage, setLoginMessage] = useState("");
   const [error, setError] = useState(null);
 
   const { setUserData } = useContext(UserContext);
@@ -34,8 +33,7 @@ export const Login = () => {
       .then((data) => {
         if (data.data.access_token) {
           setUserData(data);
-          setLoginMessage("Du er nu logget ind");
-          navigate("/dashboard");
+          navigate("/dashboard", { replace: true });
         } else {
           setLoginMessage("Dit login er forkert");
         }
@@ -50,7 +48,6 @@ export const Login = () => {
     <>
       <Section title="Velkommen tilbage" className={s.Login}>
         {error && <p>{error}</p>}
-        {loginMessage && <p>{loginMessage}</p>}
         {errors.username && <p>{errors.username.message}</p>}
         {errors.password && <p>{errors.password.message}</p>}
 

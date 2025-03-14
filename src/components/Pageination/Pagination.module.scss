@@ -1,0 +1,14 @@
+.Pageination {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin: 1rem 0;
+
+  span {
+    margin: 0 1rem;
+  }
+
+  span:last-of-type {
+    margin: 0 0 0 1rem;
+  }
+}

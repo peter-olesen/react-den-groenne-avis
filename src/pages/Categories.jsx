@@ -3,16 +3,23 @@ import { useGet } from "../hooks/useGet";
 import { CategoriesSidebar } from "../components/CategoriesSidebar/CategoriesSidebar";
 import { Separator } from "../components/Separator/Separator";
 import s from "./styles/Categories.module.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Pagination } from "../components/Pageination/Pagination";
 
 export const Categories = () => {
   const { slug } = useParams();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(9);
 
   const {
     data: products,
     isLoading,
     error,
   } = useGet(`http://localhost:4242/products/category/${slug}`);
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = products?.data?.slice(firstPostIndex, lastPostIndex);
 
   useEffect(() => {
     document.title = `${products?.message.category} - Den Grønne Avis`;
@@ -27,7 +34,7 @@ export const Categories = () => {
           {products?.message.length > 0 ? (
             <p>Der er ingen produkter i denne kategori.</p>
           ) : (
-            products?.data?.map((item) => (
+            currentPosts?.map((item) => (
               <NavLink key={item.id} to={`/annonce/${item.slug}`}>
                 <div className={s.ProductCard}>
                   <img src={item.image} alt={item.name} />
@@ -39,11 +46,11 @@ export const Categories = () => {
           )}
         </div>
       </div>
-      <div className={s.Pageination}>
-        <span>Forrige side</span>
-        <span>side 1 / 3</span>
-        <span>Næste side</span>
-      </div>
+      <Pagination
+        totalPosts={products?.data?.length}
+        postsPerPage={postsPerPage}
+        setCurrentPage={setCurrentPage}
+      />
     </>
   );
 };

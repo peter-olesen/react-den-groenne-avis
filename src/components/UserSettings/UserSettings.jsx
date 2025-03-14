@@ -30,8 +30,6 @@ export const UserSettings = () => {
     urlencoded.append("hasNewsletter", data.newsletter);
     urlencoded.append("hasNotification", data.notifications);
 
-    console.log(data);
-
     const options = {
       method: "PATCH",
       body: urlencoded,
@@ -161,9 +159,13 @@ export const UserSettings = () => {
               type="submit"
               value="gem ændringer"
             />
+            <input
+              className={s.Logout}
+              type="button"
+              value="log ud"
+              onClick={() => logout()}
+            />
             <DeleteUser />
-
-            <input type="button" value="log ud" onClick={() => logout()} />
           </div>
         </div>
       </form>

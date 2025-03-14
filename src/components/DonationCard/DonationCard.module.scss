@@ -9,6 +9,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (max-width: 768px) {
+    width: 95%;
+  }
+
   h3 {
     font-size: 24px;
     text-shadow: 0px 4px 4px 0px #00000040;

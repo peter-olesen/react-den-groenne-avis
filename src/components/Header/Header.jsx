@@ -24,7 +24,6 @@ export const Header = () => {
         <div className={s.HeaderRight}>
           <div className={s.DropdownAndButton}>
             <Dropdown
-              isClickable={true}
               className={s.HeaderDropdown}
               name="headerDropdown"
               id="headerDropdown"

@@ -22,9 +22,10 @@
   .Buttons {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 
-    .SaveProfile {
+    .SaveProfile,
+    .Logout {
       color: $wht;
       background: $green;
       padding: 0.5rem 1rem;

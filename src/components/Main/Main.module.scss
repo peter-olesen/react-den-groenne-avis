@@ -5,4 +5,12 @@
   width: 1200px;
   background: $gray;
   margin-top: 5rem;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 80%;
+  }
 }

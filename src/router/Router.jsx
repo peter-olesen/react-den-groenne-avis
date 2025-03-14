@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router";
 
+import { ProtectedRoute } from "./ProtectedRoute";
+
 // Layout
 import { Layout } from "../layouts/Layout";
 
@@ -47,17 +49,15 @@ export const Router = () => {
 
         {/* User routes */}
         <Route path={"/login"} element={<Login />} />
-        <Route path={"/dashboard"} element={<Dashboard />} />
         <Route path={"/create-account"} element={<CreateAccount />} />
-
-        {/* <Route
+        <Route
           path={"/dashboard"}
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           }
-        /> */}
+        />
 
         <Route path={"/*"} element={<PageNotFound />} />
       </Route>

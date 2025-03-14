@@ -14,6 +14,13 @@
     gap: 5rem;
     padding: 2rem;
 
+    @media (max-width: 768px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     h3 {
       color: $wht;
       font-weight: 400;

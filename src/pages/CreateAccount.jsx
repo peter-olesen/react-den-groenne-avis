@@ -28,8 +28,6 @@ export const CreateAccount = () => {
     urlencoded.append("zipcode", data.zipcode);
     urlencoded.append("city", data.city);
 
-    console.log(data);
-
     const options = {
       method: "POST",
       body: urlencoded,

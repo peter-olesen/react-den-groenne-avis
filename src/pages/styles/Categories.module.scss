@@ -5,10 +5,20 @@
   display: grid;
   grid-template-columns: 0.5fr 2fr;
 
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   .Products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     a {
       color: $blk;
@@ -32,20 +42,5 @@
         object-fit: cover;
       }
     }
-  }
-}
-
-.Pageination {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  margin: 1rem 0;
-
-  span {
-    margin: 0 1rem;
-  }
-
-  span:last-of-type {
-    margin: 0 0 0 1rem;
   }
 }

@@ -2,15 +2,68 @@
 @use "../../styles/variables" as *;
 
 .UserProductCard {
-  border: 2px solid $green;
+  border: 2px solid #1d843980;
   display: grid;
   grid-template-columns: 1fr 0.2fr;
+  // margin-bottom: 4rem;
 
   .ProductDetails {
     margin-left: 2rem;
+
+    .TitleAndPrice {
+      background: $green;
+      color: $wht;
+      padding: 0.2rem;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+      margin-right: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+      }
+
+      p:last-of-type {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  .ProductDescription {
+    margin-top: 2rem;
   }
 
   .ProductImage {
-    width: 100%;
+    margin: 1rem;
+
+    img {
+      width: 100%;
+      height: 128px;
+      object-fit: cover;
+    }
+  }
+}
+
+.Extras {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  p {
+    margin: 0.2rem 1.2rem 0 0;
+
+    a {
+      color: $blk;
+      text-decoration: none;
+    }
+  }
+  .Delete {
+    color: #952e0d;
   }
 }

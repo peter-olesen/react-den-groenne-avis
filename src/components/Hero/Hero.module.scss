@@ -15,6 +15,10 @@
   background-repeat: no-repeat;
   color: $wht;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   p {
     text-shadow: 0px 4px 4px 0px #00000040;
     text-align: center;

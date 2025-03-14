@@ -15,9 +15,16 @@
       padding: 1rem;
     }
 
-    input[type="submit"] {
+    .NewsletterButton {
       color: $wht;
       background: $green;
+      border: none;
+      padding: 1rem 1.5rem;
+    }
+
+    .DisabledNewsletterButton {
+      color: $blk;
+      background: gray;
       border: none;
       padding: 1rem 1.5rem;
     }

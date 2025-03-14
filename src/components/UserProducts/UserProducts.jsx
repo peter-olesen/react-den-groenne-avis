@@ -25,6 +25,8 @@ export const UserProducts = () => {
             price={item.price}
             image={item.image}
             description={item.description}
+            productSlug={item.slug}
+            productId={item.id}
           />
         ))
       ) : (
